@@ -1,0 +1,15 @@
+Project Colors:
+Primary	Purple Base: #6c3c8a	- Your main brand purple
+Darker Purple	Purple Dark: #4e2a66	- Deep accent, good for headers or buttons
+Lighter Purple	Purple Light: #a77fbd - Backgrounds or hover states
+Neutral Gray	Gray Mid: #888888 -	Text or UI dividers
+Accent Green	Soft Green: #15763f - Soothing and natural; pairs well with purple
+Highlight Gold	Warm Yellow: #ebdd00	- Great for highlights, CTAs, or student energy
+
+
+Screen Sizes:
+sm → 640px (phones)
+md → 768px (tablets)
+lg → 1024px (laptops)
+xl → 1280px (desktops)
+2xl → 1536px (large desktops)

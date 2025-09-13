@@ -1,0 +1,14 @@
+{
+  "private": true,
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "dev:mlk": "npm run dev --workspace mlk",
+    "build:mlk": "npm run build --workspace mlk",
+    "start:mlk": "npm run start --workspace mlk"
+  },
+  "dependencies": {
+    "framer-motion": "^12.23.12"
+  }
+}

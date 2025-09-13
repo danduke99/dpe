@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-main-extralight: var(--font-nunito-extralight);
+  --font-main-light: var(--font-nunito-light);
+  --font-main: var(--font-nunito);
+  --font-main-medium: var(--font-nunito-medium);
+  --font-main-semibold: var(--font-nunito-semibold);
+  --font-main-bold: var(--font-nunito-bold);
+  --font-main-extrabold: var(--font-nunito-extrabold);
+  --font-main-black: var(--font-nunito-black);
+  --font-merriweather: var(--font-merriweather);
+  --font-merriweather-bold: var(--font-merriweather-bold);
+  --font-bungee-outline: var(--font-bungee-outline);
+}
+
+@keyframes slideInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes comeFromPoint {
+  from {
+    opacity: 0;
+    transform: translate(50%, 50%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+.animate-slide-in-left {
+  animation: slideInFromLeft 0.7s forwards ease-out;
+}
+.animate-come-from-point {
+  animation: comeFromPoint 0.7s forwards ease-out;
+}
+
+@keyframes slide-in-right-gallery {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes slide-out-left-gallery {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+@keyframes slide-in-left-gallery {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes slide-out-right-gallery {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(100%); }
+}
+
+.animate-slide-in-right-gallery {
+  animation: slide-in-right 0.5s forwards;
+}
+
+.animate-slide-out-left-gallery {
+  animation: slide-out-left 0.5s forwards;
+}
+
+.animate-slide-in-left-gallery {
+  animation: slide-in-left 0.5s forwards;
+}
+
+.animate-slide-out-right-gallery {
+  animation: slide-out-right 0.5s forwards;
+}
