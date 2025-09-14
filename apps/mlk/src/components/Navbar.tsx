@@ -9,7 +9,6 @@ import { ClockIcon } from "@heroicons/react/24/outline";
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
-  { href: "/contact", label: "Contact" },
   { href: "/projects", label: "Projects" },
 ];
 
@@ -23,7 +22,7 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav className="relative bg-transparent w-full overflow-x-hidden">
+    <nav className="relative bg-transparent w-full overflow-x-hidden px-6">
       {/* Top Row with Logo and Hamburger */}
       <div className="grid grid-cols-2 justify-between items-center top-0 z-50 py-4">
         <div className="flex flex-row mx-2 gap-2">

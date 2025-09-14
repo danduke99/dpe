@@ -6,3 +6,10 @@ export type Project = {
   duration: string;
   description: string;
 };
+
+export type TeamMember = {
+  name: string;
+  role: string;
+  imgSrc: string;
+  alt: string;
+};

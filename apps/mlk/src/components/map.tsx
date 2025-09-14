@@ -1,4 +1,5 @@
-import { Project } from "../types/page";
+import { Project, TeamMember } from "../types/page";
+import { Course } from "../interfaces/page";
 
 // Features data
 export const features = [
@@ -71,7 +72,7 @@ export const projects: Project[] = [
     durationLabel: "Duration:",
     duration: "17/09/2019 - 21/07/2024",
     description:
-      "This is a description",
+      "This is also a description of the project above. It will be pulled in from the database at some point but right now it si statically coded.",
   },
   {
     imgSrc: "/aopel1.jpg",
@@ -80,7 +81,84 @@ export const projects: Project[] = [
     durationLabel: "Duration:",
     duration: "17/09/2025 - 21/07/2027",
     description:
-      "This is also a description",
+      "This is also a description of the project above. It will be pulled in from the database at some point but right now it si statically coded.",
+  },
+  // Add more projects here
+];
+
+export const managementTeam: TeamMember[] = [
+  {
+    name: "Hubert Duffis",
+    role: "Manager",
+    imgSrc: "/duffis.jpg",
+    alt: "principal",
+  },
+  {
+    name: "Jennifer Oduber",
+    role: "Adjunct Manager",
+    imgSrc: "/oduber.jpg",
+    alt: "viceprincipal",
+  },
+  {
+    name: "Jane Doe",
+    role: "Student Care",
+    imgSrc: "/placeholder.jpeg",
+    alt: "scc",
+  },
+  {
+    name: "Amanda Prevot",
+    role: "Admnin Assistant",
+    imgSrc: "/amanda.jpg",
+    alt: "secretary",
+  },
+];
+
+
+// Data separated into Projects and Activities
+export const activities: Course[] = [
+  {
+    id: 1,
+    title: "Basic English Speaking and Grammar",
+    schedule: "Mon-Fri 10 AM - 12 AM",
+    instructor: "Amanda Kern",
+    price: 45,
+    longDesc: "Students improve their English speaking and grammar skills through interactive sessions and exercises.",
+    images: ["/images/english1.jpg", "/images/english2.jpg"],
+    socialLink: "https://www.facebook.com/YourSchoolAlbum1",
+  },
+  {
+    id: 2,
+    title: "Natural Sciences & Mathematics Courses",
+    schedule: "Mon-Fri 10 AM - 12 AM",
+    instructor: "Gypsy Hardinge",
+    price: 67,
+    longDesc: "Engaging activities to explore natural sciences and strengthen mathematics knowledge.",
+    images: ["/images/science1.jpg", "/images/science2.jpg"],
+    socialLink: "https://www.facebook.com/YourSchoolAlbum2",
+  },
+  // Add more activities here
+];
+
+const projectsPage: Course[] = [
+  {
+    id: 5,
+    title: "Advanced Web Development",
+    schedule: "Sat-Sun 2 PM - 5 PM",
+    instructor: "John Smith",
+    price: 120,
+    longDesc: "Students learn advanced web development concepts, building full-stack applications with React and Node.js.",
+    images: ["/images/webdev1.jpg", "/images/webdev2.jpg"],
+    socialLink: "https://www.facebook.com/YourSchoolAlbum3",
+  },
+  {
+    id: 6,
+    title: "Digital Marketing Strategy",
+    schedule: "Mon-Wed 6 PM - 8 PM",
+    instructor: "Sarah Johnson",
+    price: 95,
+    longDesc: "Hands-on workshops on digital marketing, social media campaigns, and analytics.",
+    images: ["/images/marketing1.jpg", "/images/marketing2.jpg"],
+    socialLink: "https://www.facebook.com/YourSchoolAlbum4",
   },
   // Add more projects here
 ];

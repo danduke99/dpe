@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { nunitoBlack, nunitoBold } from "../styles/font/page";
+import { nunitoBlack, nunitoBold, nunitoSemiBold } from "../styles/font/page";
 import { Project } from "../types/page";
 import Section from "./Section";
 
@@ -41,31 +41,31 @@ export default function ProjectsPreview({ projects }: ProjectsPreviewProps) {
             {project.icons}
           </div>
           <div className={`relative text-black bottom-2 ${nunitoBlack.className} text-2xl`}>Action Oriented Pedagogy in Environmental Literacy</div>
-          <div className="relative bottom-2 grid grid-cols-[60%_40%]">
+          <div className="mt-2 relative bottom-2 grid grid-cols-[60%_40%]">
             <div>
-              <div>
+              <div className="flex flex-col h-full items-center justify-center">
                 <div className="text-black text-xl">{project.durationLabel}</div>
-                <div>{project.duration}</div>
+                <div className="text-sm">{project.duration}</div>
               </div>
-              <div>{project.description}</div>
             </div>
             <div className="flex justify-center items-center px-2">
-              <button className="bg-[#15763f] text-white w-32 p-2 rounded-xl justify-items-center">View Project</button>
+              <button className="bg-[#15763f] text-sm text-white w-26 p-2 rounded-md justify-items-center">View Project</button>
             </div>
           </div>
+          <div className="mb-2">{project.description}</div>
         </div>
 
         {/* Navigation */}
         <div className="relative bottom-4 flex justify-between w-full mt-4">
           <button
             onClick={prevSlide}
-            className="px-4 py-2 bg-[#15763f] rounded hover:bg-[#335642] hover:cursor-pointer"
+            className={`${nunitoSemiBold.className} text-white px-4 py-2 bg-[#15763f] rounded hover:bg-[#335642] hover:cursor-pointer`}
           >
             ← Prev
           </button>
           <button
             onClick={nextSlide}
-            className="px-4 py-2 bg-[#15763f] rounded hover:bg-[#335642] hover:cursor-pointer"
+            className={`${nunitoSemiBold.className} text-white px-4 py-2 bg-[#15763f] rounded hover:bg-[#335642] hover:cursor-pointer`}
           >
             Next →
           </button>

@@ -48,7 +48,7 @@ export default function Home() {
                 className="w-full h-full object-cover rounded-full"
               />
             </div>
-            <div className="flex flex-col rounded-full h-34 w-34 relative bottom-15 left-53">
+            <div className="flex flex-col rounded-full h-34 w-34 relative bottom-15 left-52">
               <img
                 src="/studentT.jpg"
                 alt="studentT"
@@ -67,7 +67,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="h-96 flex flex-col justify-center mt-90">
+        <div className="h-96 flex flex-col justify-center mt-85">
           <div className={`text-center text-[#434344] text-5xl ${nunitoExtraBold.className}`}>Welcome to <span className="text-[#6c3c8a]">Dr. Martin Luther King Primary School</span></div>
           <div className={`max-w-2xl mx-auto text-center text-[#434344] text-xl mt-4 ${nunitoLight.className}`}>Serving the community since 1996</div>
           <div className="flex flex-col md:flex-row justify-center mt-5 gap-4">
@@ -118,11 +118,11 @@ export default function Home() {
           <GalleryCarousel />
         </div>
 
-        <div className="my-10 space-y-5">
+        <div className="mt-10 mb-5 space-y-5">
           <div className="bg-[rgba(235,219,0,0.1)] p-4 rounded-4xl">
             <AboutPreview />
           </div>
-          <div className="bg-[rgba(21,118,63,0.05)] p-4 rounded-4xl">
+          <div className="bg-[rgba(21,118,63,0.05)] px-4 pt-4 rounded-4xl">
             <ProjectsPreview projects={projects} />
           </div>
         </div>
