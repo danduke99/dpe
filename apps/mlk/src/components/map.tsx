@@ -113,51 +113,54 @@ export const managementTeam: TeamMember[] = [
   },
 ];
 
-
 // Data separated into Projects and Activities
 export const activities: Course[] = [
   {
     id: 1,
-    title: "Basic English Speaking and Grammar",
-    schedule: "Mon-Fri 10 AM - 12 AM",
-    instructor: "Amanda Kern",
+    coverImg: "/coverH.jpg",
+    title: "Visit to the Port of St. Maarten",
+    duration: "14 February 2024",
+    participants: ["Group 6"],
     price: 45,
-    longDesc: "Students improve their English speaking and grammar skills through interactive sessions and exercises.",
-    images: ["/images/english1.jpg", "/images/english2.jpg"],
-    socialLink: "https://www.facebook.com/YourSchoolAlbum1",
+    longDesc: "Students take a field trip to the Port of St. Maarten to boost their understanding of the island.",
+    images: ["/placeholder.jpeg", "/placeholder.jpeg"],
+    socialLink: "https://www.facebook.com/media/set/?set=a.869327291661287&type=3",
   },
   {
     id: 2,
-    title: "Natural Sciences & Mathematics Courses",
-    schedule: "Mon-Fri 10 AM - 12 AM",
-    instructor: "Gypsy Hardinge",
+    coverImg: "/parliament.jpg" ,
+    title: "Opening of Parliament - 2025",
+    duration: "September 2025",
+    participants: ["Amanda Kern", "Jane Doe", "Phillip John"],
     price: 67,
     longDesc: "Engaging activities to explore natural sciences and strengthen mathematics knowledge.",
-    images: ["/images/science1.jpg", "/images/science2.jpg"],
-    socialLink: "https://www.facebook.com/YourSchoolAlbum2",
+    images: ["/placeholder.jpeg", "/placeholder.jpeg"],
+    socialLink: "https://www.facebook.com/media/set/?set=a.1266270601966952&type=3",
   },
   // Add more activities here
 ];
 
-const projectsPage: Course[] = [
+export const projectsPage: Course[] = [
   {
     id: 5,
-    title: "Advanced Web Development",
-    schedule: "Sat-Sun 2 PM - 5 PM",
-    instructor: "John Smith",
+    coverImg: "/aopelC.png",
+    title: "AOPEL",
+    duration: "Sat-Sun 2 PM - 5 PM",
+    participants: ["Amanda Kern", "Jane Doe", "Phillip John"],
     price: 120,
     longDesc: "Students learn advanced web development concepts, building full-stack applications with React and Node.js.",
-    images: ["/images/webdev1.jpg", "/images/webdev2.jpg"],
+    images: ["/placeholder.jpeg", "/placeholder.jpeg"],
     socialLink: "https://www.facebook.com/YourSchoolAlbum3",
   },
   {
     id: 6,
+    coverImg: "/parliament.jpg",
     title: "Digital Marketing Strategy",
-    schedule: "Mon-Wed 6 PM - 8 PM",
-    instructor: "Sarah Johnson",
+    duration: "Mon-Wed 6 PM - 8 PM",
+    participants: ["Amanda Kern", "Jane Doe", "Phillip John"],
     price: 95,
     longDesc: "Hands-on workshops on digital marketing, social media campaigns, and analytics.",
-    images: ["/images/marketing1.jpg", "/images/marketing2.jpg"],
+    images: ["/placeholder.jpeg", "/placeholder.jpeg"],
     socialLink: "https://www.facebook.com/YourSchoolAlbum4",
   },
   // Add more projects here

@@ -1,8 +1,9 @@
 export interface Course {
   id: number;
+  coverImg: string;
   title: string;
-  schedule: string;
-  instructor: string;
+  duration: string;
+  participants: string[];
   price: number;
   longDesc: string;
   images: string[];

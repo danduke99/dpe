@@ -2,20 +2,24 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { galleryImages } from "./map"; // adjust path
 
-export default function GalleryCarousel() {
+export interface CarouselImage {
+  src: string;
+  alt: string;
+}
+
+interface CarouselProps {
+  images: CarouselImage[];
+  height?: string; // e.g. "h-80 sm:h-96"
+  rounded?: string; // e.g. "rounded-3xl"
+}
+
+export default function Carousel({ images, height = "h-80 sm:h-96", rounded = "rounded-3xl" }: CarouselProps) {
   const [[currentIndex, direction], setCurrentIndex] = useState<[number, number]>([0, 0]);
+  const imageCount = images.length;
 
-  const imageCount = galleryImages.length;
-
-  const prevSlide = () => {
-    setCurrentIndex([(currentIndex - 1 + imageCount) % imageCount, -1]);
-  };
-
-  const nextSlide = () => {
-    setCurrentIndex([(currentIndex + 1) % imageCount, 1]);
-  };
+  const prevSlide = () => setCurrentIndex([(currentIndex - 1 + imageCount) % imageCount, -1]);
+  const nextSlide = () => setCurrentIndex([(currentIndex + 1) % imageCount, 1]);
 
   const variants = {
     enter: (direction: number) => ({
@@ -31,13 +35,12 @@ export default function GalleryCarousel() {
 
   return (
     <div className="relative w-full max-w-5xl mx-auto mt-4">
-      <div className="overflow-hidden rounded-3xl w-full h-80 sm:h-96 shadow-2xl relative">
-        {/* Framer Motion Slide */}
+      <div className={`overflow-hidden ${rounded} w-full ${height} shadow-2xl relative`}>
         <AnimatePresence initial={false} custom={direction}>
           <motion.img
             key={currentIndex}
-            src={galleryImages[currentIndex].src}
-            alt={galleryImages[currentIndex].alt}
+            src={images[currentIndex].src}
+            alt={images[currentIndex].alt}
             className="w-full h-full object-cover"
             custom={direction}
             variants={variants}
@@ -48,42 +51,42 @@ export default function GalleryCarousel() {
             drag="x"
             dragConstraints={{ left: 0, right: 0 }}
             dragElastic={0.2}
-            onDragEnd={(e, { offset, velocity }) => {
+            onDragEnd={(e, { offset }) => {
               if (offset.x > 50) prevSlide();
               else if (offset.x < -50) nextSlide();
             }}
           />
         </AnimatePresence>
 
-        {/* Left & Right Fade Columns */}
+        {/* Fade edges */}
         <div className="absolute top-0 left-0 h-full w-1/6 pointer-events-none bg-gradient-to-r from-black/50 via-black/0"></div>
         <div className="absolute top-0 right-0 h-full w-1/6 pointer-events-none bg-gradient-to-l from-black/50 via-black/0"></div>
 
-        {/* Prev/Next Buttons */}
+        {/* Controls */}
         <button
           onClick={prevSlide}
-          className="absolute top-1/2 left-4 h-8 w-8 p-1 rounded-full bg-white bg-opacity-70 shadow-lg hover:bg-opacity-100 transform -translate-y-1/2 transition cursor-pointer"
+          className="absolute top-1/2 left-4 h-8 w-8 p-1 rounded-full bg-white bg-opacity-70 shadow-lg hover:bg-opacity-100 -translate-y-1/2 transition"
         >
           &#10094;
         </button>
         <button
           onClick={nextSlide}
-          className="absolute top-1/2 right-4 h-8 w-8 p-1 rounded-full bg-white bg-opacity-70 shadow-lg hover:bg-opacity-100 transform -translate-y-1/2 transition cursor-pointer"
+          className="absolute top-1/2 right-4 h-8 w-8 p-1 rounded-full bg-white bg-opacity-70 shadow-lg hover:bg-opacity-100 -translate-y-1/2 transition"
         >
           &#10095;
         </button>
       </div>
 
-      {/* Indicators */}
+      {/* Dots */}
       <div className="flex justify-center mt-4 gap-2">
-        {galleryImages.map((_, idx) => (
+        {images.map((_, idx) => (
           <span
             key={idx}
             className={`h-2 w-3 rounded-full cursor-pointer transition ${
               idx === currentIndex ? "bg-[#6c3c8a]" : "bg-[#888888]"
             }`}
             onClick={() => setCurrentIndex([idx, idx > currentIndex ? 1 : -1])}
-          ></span>
+          />
         ))}
       </div>
     </div>

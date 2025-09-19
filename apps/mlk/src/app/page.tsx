@@ -4,8 +4,8 @@ import AboutPreview from "../components/AboutPreview";
 import ProjectsPreview from "../components/ProjectsPreview";
 import { nunito, nunitoBold, nunitoExtraBold, nunitoLight } from "../styles/font/page";
 import MovingCircles from "../components/MovingCircles";
-import { features, projects } from "../components/map"
-import GalleryCarousel from "../components/GalleryCarousel";
+import { features, galleryImages, projects } from "../components/map"
+import Carousel from "../components/Carousel";
 
 export default function Home() {
   const [animate, setAnimate] = useState(false);
@@ -115,7 +115,7 @@ export default function Home() {
           <span className={`text-4xl font-bold ${nunitoExtraBold.className}`}>
             Gallery
           </span>
-          <GalleryCarousel />
+          <Carousel images={galleryImages} height="h-96" rounded="rounded-lg" />
         </div>
 
         <div className="mt-10 mb-5 space-y-5">
