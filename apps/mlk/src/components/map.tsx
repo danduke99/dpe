@@ -1,5 +1,5 @@
 import { Project, TeamMember } from "../types/page";
-import { Course } from "../interfaces/page";
+import { ActPro } from "../interfaces/page";
 
 // Features data
 export const features = [
@@ -114,7 +114,7 @@ export const managementTeam: TeamMember[] = [
 ];
 
 // Data separated into Projects and Activities
-export const activities: Course[] = [
+export const activities: ActPro[] = [
   {
     id: 1,
     coverImg: "/coverH.jpg",
@@ -125,6 +125,7 @@ export const activities: Course[] = [
     longDesc: "Students take a field trip to the Port of St. Maarten to boost their understanding of the island.",
     images: ["/placeholder.jpeg", "/placeholder.jpeg"],
     socialLink: "https://www.facebook.com/media/set/?set=a.869327291661287&type=3",
+    scope: "Local"
   },
   {
     id: 2,
@@ -136,11 +137,12 @@ export const activities: Course[] = [
     longDesc: "Engaging activities to explore natural sciences and strengthen mathematics knowledge.",
     images: ["/placeholder.jpeg", "/placeholder.jpeg"],
     socialLink: "https://www.facebook.com/media/set/?set=a.1266270601966952&type=3",
+    scope: "Local"
   },
   // Add more activities here
 ];
 
-export const projectsPage: Course[] = [
+export const projectsPage: ActPro[] = [
   {
     id: 5,
     coverImg: "/aopelC.png",
@@ -151,6 +153,7 @@ export const projectsPage: Course[] = [
     longDesc: "Students learn advanced web development concepts, building full-stack applications with React and Node.js.",
     images: ["/placeholder.jpeg", "/placeholder.jpeg"],
     socialLink: "https://www.facebook.com/YourSchoolAlbum3",
+    scope: "International"
   },
   {
     id: 6,
@@ -162,6 +165,7 @@ export const projectsPage: Course[] = [
     longDesc: "Hands-on workshops on digital marketing, social media campaigns, and analytics.",
     images: ["/placeholder.jpeg", "/placeholder.jpeg"],
     socialLink: "https://www.facebook.com/YourSchoolAlbum4",
+    scope: "International"
   },
   // Add more projects here
 ];

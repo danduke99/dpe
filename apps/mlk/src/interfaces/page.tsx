@@ -1,4 +1,4 @@
-export interface Course {
+export interface ActPro {
   id: number;
   coverImg: string;
   title: string;
@@ -8,4 +8,5 @@ export interface Course {
   longDesc: string;
   images: string[];
   socialLink: string;
+  scope: "International" | "Local";
 }

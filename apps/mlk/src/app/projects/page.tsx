@@ -1,19 +1,20 @@
 "use client";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { EyeIcon } from "@heroicons/react/24/solid";
-import { Course } from "../../interfaces/page";
+import { GlobeAmericasIcon, MapPinIcon } from "@heroicons/react/24/solid";
+import { ActPro } from "../../interfaces/page";
 import { activities, projectsPage } from "../../components/map";
-import { nunito, nunitoBlack, nunitoBold, nunitoSemiBold } from "../../styles/font/page";
+import { nunito, nunitoBlack, nunitoBold } from "../../styles/font/page";
 import InteractiveSection from "../../components/InteractiveSection";
+import Image from "next/image";
 
-const CourseCard = ({ course }: { course: Course }) => {
+const ActProCard = ({ actpro }: { actpro: ActPro }) => {
   const [expanded, setExpanded] = useState(false);
 
   // [index, direction] for carousel
   const [carouselState, setCarouselState] = useState<[number, number]>([0, 0]);
   const [carouselIndex, direction] = carouselState;
-  const imageCount = course.images.length;
+  const imageCount = actpro.images.length;
 
   const prevImage = () =>
     setCarouselState([(carouselIndex - 1 + imageCount) % imageCount, -1]);
@@ -36,30 +37,38 @@ const CourseCard = ({ course }: { course: Course }) => {
     }),
   };
 
+  const ScopeIcon = ({ scope }: { scope: "International" | "Local" }) => {
+    return scope === "International" ? (
+      <GlobeAmericasIcon className="h-6 text-white justify-center w-full" />
+    ) : (
+      <MapPinIcon className="h-6 text-white justify-center w-full" />
+    );
+  };
+
   return (
     <div
       className="border border-gray-200 rounded-lg overflow-hidden hover:shadow-md transition-shadow cursor-pointer shadow-xl"
       onClick={() => setExpanded(!expanded)}
     >
       <div className="relative">
-        <img className="rounded-t-lg w-full h-40 object-cover" src={course.coverImg} alt="" />
+        <Image className="rounded-t-lg w-full h-40 object-cover" width={320} height={160} src={actpro.coverImg} alt="" />
         <button
           className="absolute top-34 right-2 bg-[#15763f] hover:bg-[#2c553e] rounded-full w-10 h-10"
         >
-          <EyeIcon className="h-6 text-white justify-center w-full" />
+          <ScopeIcon scope={actpro.scope}/>
         </button>
       </div>
       <div className={`p-4 border-t-4 border-[#ebdd00]`}>
-        <p className={`${nunitoBlack.className} font-bold text-lg text-gray-900 mb-1`}>{course.title}</p>
+        <p className={`${nunitoBlack.className} font-bold text-lg text-gray-900 mb-1`}>{actpro.title}</p>
         <div className="grid grid-cols-2 space-x-1">
           <div className="flex flex-col">
             <p className={`${nunitoBold.className} text-gray-600`}>Duration:</p>
-            <p className={`${nunito.className} text-gray-600`}>{course.duration}</p>
+            <p className={`${nunito.className} text-gray-600`}>{actpro.duration}</p>
           </div>
           <div className="flex flex-col">
             <span className={`${nunitoBold.className} text-gray-600`}>Participants:</span>
             <ul className={`${nunito.className} list-disc list-inside  text-gray-700`}>
-              {course.participants?.map((p, idx) => (
+              {actpro.participants?.map((p, idx) => (
                 <p key={idx}>{p}</p>
               ))}
             </ul>
@@ -77,7 +86,7 @@ const CourseCard = ({ course }: { course: Course }) => {
               className={`${nunito.className} overflow-hidden`}
             >
               <p className={`${nunitoBold.className} text-gray-600`}>Description:</p>
-              <p className="text-gray-600 mb-2">{course.longDesc}</p>
+              <p className="text-gray-600 mb-2">{actpro.longDesc}</p>
               <p className={`${nunitoBold.className} text-gray-600 mb-1`}>Gallery:</p>
 
               {/* Image carousel */}
@@ -85,8 +94,8 @@ const CourseCard = ({ course }: { course: Course }) => {
                 <AnimatePresence initial={false} custom={direction}>
                   <motion.img
                     key={carouselIndex}
-                    src={course.images[carouselIndex]}
-                    alt={`${course.title} image`}
+                    src={actpro.images[carouselIndex]}
+                    alt={`${actpro.title} image`}
                     className="w-full h-full object-cover"
                     custom={direction}
                     variants={variants}
@@ -130,7 +139,7 @@ const CourseCard = ({ course }: { course: Course }) => {
 
                 {/* Dots */}
                 <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-2">
-                  {course.images.map((_, idx) => (
+                  {actpro.images.map((_, idx) => (
                     <span
                       key={idx}
                       className={`h-2 w-3 rounded-full cursor-pointer transition ${idx === carouselIndex
@@ -149,8 +158,8 @@ const CourseCard = ({ course }: { course: Course }) => {
               {/* Social media link */}
               <p className={`${nunitoBold.className} w-full text-center`}>View the Full Album on{" "}
                 <a
-                  href={course.socialLink}
-                  target={course.socialLink}
+                  href={actpro.socialLink}
+                  target={actpro.socialLink}
                   rel="noopener noreferrer"
                   className="inline-block mt-3 text-blue-600 hover:underline"
                   onClick={(e) => e.stopPropagation()}
@@ -166,7 +175,7 @@ const CourseCard = ({ course }: { course: Course }) => {
   );
 };
 
-export default function CourseCards() {
+export default function ActProCards() {
   const [activeTab, setActiveTab] = useState<"activities" | "projects">(
     "activities"
   );
@@ -176,13 +185,6 @@ export default function CourseCards() {
       <div className="relative w-full h-32 my-4">
         {/* Interactive section */}
         <InteractiveSection bgColor="#15763f" height="128px" iconCount={30} />
-
-        {/* Projects text */}
-        <div className="absolute inset-0 z-20 flex justify-center items-center w-full h-full pointer-events-none">
-          <p className={`${nunitoBold.className} text-4xl text-black`}>
-            Projects
-          </p>
-        </div>
       </div>
       <div className="min-h-screen bg-white px-6 pb-4">
         <div className="max-w-6xl mx-auto">
@@ -211,8 +213,8 @@ export default function CourseCards() {
           {/* Cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {(activeTab === "activities" ? activities : projectsPage).map(
-              (course: Course) => (
-                <CourseCard key={course.id} course={course} />
+              (actpro) => (
+                <ActProCard key={actpro.id} actpro={actpro} />
               )
             )}
           </div>
