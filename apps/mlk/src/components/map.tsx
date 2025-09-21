@@ -113,6 +113,63 @@ export const managementTeam: TeamMember[] = [
   },
 ];
 
+export const fullStaff: TeamMember[] = [
+  {
+    name: "Hubert Duffis",
+    role: "Manager",
+    imgSrc: "/duffis.jpg",
+    alt: "principal",
+  },
+  {
+    name: "Jennifer Oduber",
+    role: "Adjunct Manager",
+    imgSrc: "/oduber.jpg",
+    alt: "viceprincipal",
+  },
+  {
+    name: "Jane Doe",
+    role: "Student Care",
+    imgSrc: "/placeholder.jpeg",
+    alt: "scc",
+  },
+  {
+    name: "Amanda Prevot",
+    role: "Administrative Assistant",
+    imgSrc: "/amanda.jpg",
+    alt: "secretary",
+  },
+  {
+    name: "Jane Duffis",
+    role: "Group 3",
+    imgSrc: "/placeholder.jpeg",
+    alt: "principal",
+  },
+  {
+    name: "Jane Doe",
+    role: "Group 8",
+    imgSrc: "/placeholder.jpeg",
+    alt: "viceprincipal",
+  },
+  {
+    name: "Jane Doe",
+    role: "Group 1",
+    imgSrc: "/placeholder.jpeg",
+    alt: "scc",
+  },
+  {
+    name: "John Doe",
+    role: "Group 5",
+    imgSrc: "/placeholder.jpeg",
+    alt: "secretary",
+  },
+  {
+    name: "John Doe",
+    role: "Physical Education",
+    imgSrc: "/placeholder.jpeg",
+    alt: "secretary",
+  },
+];
+
 // Data separated into Projects and Activities
 export const activities: ActPro[] = [
   {

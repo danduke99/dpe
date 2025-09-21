@@ -49,7 +49,7 @@ export default function ProjectsPreview({ projects }: ProjectsPreviewProps) {
               </div>
             </div>
             <div className="flex justify-center items-center px-2">
-              <button className="bg-[#15763f] text-sm text-white w-26 p-2 rounded-md justify-items-center">View Project</button>
+              <a href="/projects" className="bg-[#15763f] text-sm text-white w-26 p-2 rounded-md justify-items-center hover:cursor-pointer text-center">View Project</a>
             </div>
           </div>
           <div className="mb-2">{project.description}</div>
