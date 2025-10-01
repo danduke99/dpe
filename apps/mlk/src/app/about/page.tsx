@@ -1,7 +1,7 @@
 "use client";
 import InteractiveSection from "../../components/InteractiveSection";
 import Image from "next/image";
-import { nunito, nunitoBold, nunitoExtraBold, nunitoMedium, nunitoSemiBold } from "../../styles/font/page";
+import { nunito, nunitoBold, nunitoExtraBold, nunitoSemiBold } from "../../styles/font/page";
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 import { fullStaff } from "../../components/map";
