@@ -27,7 +27,7 @@ export default function AboutPage() {
             <span className="text-[#6c3c8a] underline inline-block transform transition-transform duration-300 ease-in-out hover:scale-95">Dr. Martin Luther King Jr.</span>{" "}Primary School
           </h1>
           <p className={`${nunito.className} mt-4 text-gray-600 leading-relaxed`}>
-            A beacon of light in the community. Inspiring children and parents to go beyond. Learn more about the school and it's past below.
+            A beacon of light in the community. Inspiring children and parents to go beyond. Learn more about the school and it&apos;s past below.
           </p>
         </div>
 
